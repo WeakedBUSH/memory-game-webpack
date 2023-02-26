@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+
+*{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+color: white;
+font-family: 'Quicksand', sans-serif;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: auto;
+    height: 100vh;
+    background-color:#191825;
+}
+.header{
+    height: 100px;
+    margin-top: 1em;
+    align-self: center;
+    padding: 1em;
+    font-size: 1em;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+}
+.attempsContainer, .foundsContainer{
+    margin-top: 1em;
+    margin-bottom: 1.5em;
+    display: flex;
+    font-size: 10px;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+    padding: 0.5em;
+    text-transform: uppercase;
+    height: 100px;
+    width: 150px;
+    border: solid 5px #C07EEC;
+    background-color: transparent;
+   
+}
+.scoreboard{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: row;
+    width: 50%;
+}
+.plateau{
+    display: grid;
+    grid-template-columns: repeat(4, 120px);
+    grid-gap: 1em;
+    flex-wrap: wrap;
+    height: auto;
+    width: auto;
+    perspective: 1000px;
+}
+
+.card{
+    position: relative;
+    width: 120px;
+    height: 200px;
+    margin: 2px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 1.5s cubic-bezier(0.175, 0.775, 0.32, 1.170);
+    transform-style: preserve-3d;
+}
+
+.face, .back{
+    border-radius: 5px;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    
+}
+.back{
+    background-image: url('./assets/img/cardplaceholder.png');
+    backface-visibility: hidden;
+}
+.card:active{
+    transform: scale(0.9);
+    transition: .5s;
+}
+
+.flip{
+    transform: rotateY(180deg);
+}
+
+.restart{
+    margin-top: 1em;
+    padding: 1em;
+    font-size: 1.5em;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    border: solid 5px #C07EEC;
+    background-color: transparent;
+    cursor: pointer;
+    transition: .5s;
+    margin-bottom: 1em;
+}
+.restart:active{
+    transform: scale(0.9);
+    transition: .5s;
+}
